@@ -138,7 +138,7 @@ class Program
         LuxuryBag bag = new LuxuryBag("Marc Jacobs", "Snapshot", 13000);
         LuxuryShoe shoe = new LuxuryShoe("Nike", "Air Max", 15000, "Leather", false, "White");
         LuxuryWatch watch = new LuxuryWatch("Rolex", "Daytona", 1200000, "Gold", true, "Gold");
-        LuxuryAccessory accessory = new LuxuryAccessory("Tiffany & Co.", "Bracelet", 580000, "Silver", true, "Silver");
+        LuxuryAccessory accessory = new LuxuryAccessory("Tiffany & Co.", "Necklace", 580000, "Gold", true, "Silver");
 
         bag.DisplayDetails();
         shoe.DisplayDetails();
