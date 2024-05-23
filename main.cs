@@ -1,6 +1,10 @@
 using System;
 
-public abstract class LuxuryItem
+public interface IPurchasable
+{
+    void Purchase(decimal budget);
+}
+public abstract class LuxuryItem : IPurchasable
 {
     public string Brand { get; set; }
     public string Model { get; set; }
@@ -74,7 +78,7 @@ public abstract class LuxuryItem
         }
         else
         {
-            Console.WriteLine($"The price of {Brand} {Model} is beyond your budget. Sorry, Purchase unsuccessful.");
+            Console.WriteLine($"The price of {Brand} {Model} is beyond your budget. Sorry but your Purchase is unsuccessful.");
         }
     }
 }
@@ -135,10 +139,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        LuxuryBag bag = new LuxuryBag("Marc Jacobs", "Snapshot", 13000);
-        LuxuryShoe shoe = new LuxuryShoe("Nike", "Air Max", 15000, "Leather", false, "White");
-        LuxuryWatch watch = new LuxuryWatch("Rolex", "Daytona", 1200000, "Gold", true, "Gold");
-        LuxuryAccessory accessory = new LuxuryAccessory("Tiffany & Co.", "Necklace", 580000, "Gold", true, "Silver");
+        LuxuryItem bag = new LuxuryBag("Marc Jacobs", "Snapshot", 13000);
+        LuxuryItem shoe = new LuxuryShoe("Nike", "Air Max", 15000, "Leather", false, "White");
+        LuxuryItem watch = new LuxuryWatch("Rolex", "Daytona", 1200000, "Gold", true, "Gold");
+        LuxuryItem accessory = new LuxuryAccessory("Tiffany & Co.", "Necklace", 580000, "Gold", true, "Silver");
 
         bag.DisplayDetails();
         shoe.DisplayDetails();
